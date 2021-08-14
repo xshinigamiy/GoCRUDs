@@ -3,12 +3,12 @@
   <component name="issues">
     <option name="index">
       <map>
-        <entry key="$PROJECT_DIR$/cmd/GoCRUDs/main.go">
+        <entry key="$PROJECT_DIR$/go.mod">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/go.mod">
+        <entry key="$PROJECT_DIR$/go.sum">
           <value>
             <set />
           </value>

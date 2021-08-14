@@ -1,2 +1,9 @@
+<<<<<<< HEAD
+# github.com/gorilla/mux v1.8.0
+## explicit
+github.com/gorilla/mux
+# github.com/sirupsen/logrus v1.8.1
+=======
 # gorm.io/gorm v1.21.13
+>>>>>>> 5155bf265a9281bfcb994b10d5eb073c845556c8
 ## explicit
