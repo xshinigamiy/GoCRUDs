@@ -1,7 +1,7 @@
 package main
 
 import (
-	"GoPractice/GoCRUDs/internal/app"
+	"GoCRUDs/internal/app"
 )
 
 func main() {

@@ -1,8 +1,8 @@
 package health_check
 
 import (
-	"GoPractice/GoCRUDs/pkg/constants"
-	"GoPractice/GoCRUDs/pkg/utils"
+	"GoCRUDs/pkg/constants"
+	"GoCRUDs/pkg/utils"
 	"net/http"
 )
 
