@@ -1,13 +1,14 @@
 # github.com/gorilla/mux v1.8.0
 ## explicit
 github.com/gorilla/mux
+# github.com/jinzhu/gorm v1.9.16
+## explicit
+github.com/jinzhu/gorm
+# github.com/jinzhu/inflection v1.0.0
+github.com/jinzhu/inflection
 # github.com/sirupsen/logrus v1.8.1
 ## explicit
 github.com/sirupsen/logrus
-# golang.org/x/sys v0.0.0-20210809222454-d867a43fc93e
-## explicit
-golang.org/x/sys/internal/unsafeheader
+# golang.org/x/sys v0.0.0-20200323222414-85ca7c5b95cd
 golang.org/x/sys/unix
 golang.org/x/sys/windows
-# gorm.io/gorm v1.21.13
-## explicit

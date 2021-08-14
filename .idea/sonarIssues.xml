@@ -8,6 +8,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/cmd/GoCRUDs/main.go">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/config/commons.conf">
           <value>
             <set />
@@ -39,6 +44,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/internal/app/app.go">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/internal/repository/mySQL.go">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/pkg/pojos/person.go">
           <value>
             <set />
           </value>
