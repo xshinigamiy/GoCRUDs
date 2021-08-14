@@ -1,0 +1,2 @@
+# gorm.io/gorm v1.21.13
+## explicit
