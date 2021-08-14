@@ -1,9 +1,10 @@
 package app
 
 import (
-	"GoPractice/GoCRUDs/config"
-	h "GoPractice/GoCRUDs/internal/health-check"
-	"GoPractice/GoCRUDs/pkg/utils"
+	"GoCRUDs/config"
+	h "GoCRUDs/internal/health-check"
+	"GoCRUDs/internal/routes"
+	"GoCRUDs/pkg/utils"
 	"context"
 	"errors"
 	"github.com/gorilla/mux"
@@ -19,16 +20,14 @@ type App struct {
 }
 
 func (a *App) SetupService() {
-	log.Info("Server initialization started...")
 	config.InitConfigs()
 	a.Router = a.InitializeRoutes()
-	log.Info("Server initialization successful")
 }
 
 func (a *App) InitializeRoutes() *mux.Router {
 	r := mux.NewRouter()
-	log.Info("Initializing routes")
 	h.HealthCheckRoutes(r)
+	routes.Route(r)
 	return r
 }
 

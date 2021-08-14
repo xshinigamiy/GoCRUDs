@@ -1,34 +1,82 @@
 package repository
 
 import (
-	"github.com/jinzhu/gorm"
+	"GoCRUDs/config"
+	"GoCRUDs/pkg/pojos"
 	log "github.com/sirupsen/logrus"
+	"gorm.io/driver/mysql"
+	"gorm.io/gorm"
 )
 
-var (
-	MySQLRepoVar *MySQLRepo
-)
-
-type MySQLRepo struct {
-	db *gorm.DB
+type User struct {
+	gorm.Model
+	ID         string `gorm:"default:uuid_generate_v3()"`
+	FirstName  string
+	LastName   string
+	Age        int
+	Profession string
+	CreatedAt  string
+	UpdatedAt  string
+	UpdatedBy  string
+	IsActive   string
 }
 
-func GetMySQLRepo () *MySQLRepo {
-	if MySQLRepoVar != nil {
-		return MySQLRepoVar
-	}
+var (
+	MySQLRepo *MySQLRepository
+)
+
+type MySQLRepository struct {
+	DbConnection *gorm.DB
+}
+
+func init() {
 	InitMySQLDBRepo()
-	return MySQLRepoVar
+}
+
+func GetMySQLRepo() *MySQLRepository {
+	if MySQLRepo != nil {
+		return MySQLRepo
+	} else {
+		InitMySQLDBRepo()
+		return MySQLRepo
+	}
+}
+
+func GetDbURL() string {
+	return config.GetConfigs().DBConfigs.DBUser + ":" + config.GetConfigs().DBConfigs.DBPassword +
+		"@tcp(" + config.GetConfigs().DBConfigs.Url + ":" + config.GetConfigs().DBConfigs.Port + ")/" +
+		config.GetConfigs().DBConfigs.DatabaseName + "?charset=utf8mb4&parseTime=True&loc=Local"
 }
 
 func InitMySQLDBRepo() {
-	db, err := gorm.Open("mysql", "root:root@tcp(127.0.0.1:3306)/person?charset=utf8&parseTime=True")
+	log.Info("URL : ", GetDbURL())
+	db, err := gorm.Open(mysql.Open(GetDbURL()), &gorm.Config{})
 	if err != nil {
-		log.Error("Couldn't get DB connection")
+		log.Error("Couldn't get dbConnection connection")
+		panic(err)
 	} else {
-		log.Info("DB connection initialized successfully")
+		log.Info("dbConnection connection initialized successfully")
 	}
-	MySQLRepoVar.db = db
+
+	MySQLRepo = &MySQLRepository{
+		DbConnection: db,
+	}
+
+	err = MySQLRepo.DbConnection.AutoMigrate(&User{})
+	if err != nil {
+		log.Error("error while migrating DB")
+		return
+	}
 }
 
+func (repo *MySQLRepository) CreateUser(user pojos.User) *gorm.DB {
+	//TODO: this method does not return the ID of the inserted object
+	val := repo.DbConnection.Create(user)
+	log.Info(val.Statement)
+	return nil
+}
 
+func (repo *MySQLRepository) GetUserById(Id string) *gorm.DB {
+	//TODO: fetch user based on Id
+	return nil
+}
