@@ -1,9 +1,13 @@
-<<<<<<< HEAD
 # github.com/gorilla/mux v1.8.0
 ## explicit
 github.com/gorilla/mux
 # github.com/sirupsen/logrus v1.8.1
-=======
+## explicit
+github.com/sirupsen/logrus
+# golang.org/x/sys v0.0.0-20210809222454-d867a43fc93e
+## explicit
+golang.org/x/sys/internal/unsafeheader
+golang.org/x/sys/unix
+golang.org/x/sys/windows
 # gorm.io/gorm v1.21.13
->>>>>>> 5155bf265a9281bfcb994b10d5eb073c845556c8
 ## explicit
