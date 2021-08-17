@@ -44,8 +44,8 @@ func UserObjectMapper(user request.User) pojos.User {
 		FirstName: user.FirstName,
 		LastName:  user.LastName,
 		Age:       user.Age,
-		CreatedAt: user.CreatedAt,
-		UpdatedAt: user.UpdatedAt,
+		// CreatedAt: user.CreatedAt,
+		// UpdatedAt: user.UpdatedAt,
 		UpdatedBy: user.UpdatedBy,
 		CreatedBy: user.CreatedBy,
 	}

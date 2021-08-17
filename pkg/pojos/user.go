@@ -5,9 +5,9 @@ type User struct {
 	LastName   string
 	Age        int
 	Profession string
-	CreatedAt  string
-	UpdatedAt  string
-	UpdatedBy  string
-	IsActive   string
-	CreatedBy  string
+	// CreatedAt  string
+	// UpdatedAt string
+	UpdatedBy string
+	IsActive  string
+	CreatedBy string
 }

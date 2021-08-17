@@ -3,6 +3,8 @@ package repository
 import (
 	"GoCRUDs/config"
 	"GoCRUDs/pkg/pojos"
+	"time"
+
 	log "github.com/sirupsen/logrus"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
@@ -10,13 +12,14 @@ import (
 
 type User struct {
 	gorm.Model
-	ID         string `gorm:"default:uuid_generate_v3()"`
+	ID         uint `gorm:"primaryKey"`
 	FirstName  string
 	LastName   string
 	Age        int
 	Profession string
-	CreatedAt  string
-	UpdatedAt  string
+	CreatedAt  time.Time `gorm:"type:timestamp;default:current_timestamp"`
+	CreatedBy  string
+	UpdatedAt  time.Time `gorm:"type:timestamp;default:current_timestamp ON update current_timestamp"`
 	UpdatedBy  string
 	IsActive   string
 }
